@@ -18,6 +18,7 @@ function run_tests {
 
 function pip_wheel_cmd {
     local abs_wheelhouse=$1
+    pip install pybind11
     pip wheel $(pip_opts) -w $abs_wheelhouse --no-deps .
 }
 
