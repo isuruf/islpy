@@ -18,8 +18,6 @@ function run_tests {
 
 function pip_wheel_cmd {
     local abs_wheelhouse=$1
-    rm -rf siteconf.py
-    python configure.py --no-use-shipped-isl --isl-inc-dir=$BUILD_PREFIX/include --isl-lib-dir=$BUILD_PREFIX/lib
     pip wheel $(pip_opts) -w $abs_wheelhouse --no-deps .
 }
 
